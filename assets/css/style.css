@@ -3,3 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+
+.rettangolo{
+    height: 50px;
+    width: 50px;
+    background-color: aquamarine;
+    margin: 5px;
+}

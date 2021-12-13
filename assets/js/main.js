@@ -1,4 +1,4 @@
-[
+const objects = [
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -128,3 +128,37 @@ Come sempre, iniziamo prima di tutto dall'analisi e comprensione della consegna.
 Le icone presenti nella struttura dati fanno riferimento alla nota libreria Font Awesome, perciò come prima cosa assicuriamoci di aver inserito il link alla cdn nell'head della pagina. Dopodiché, basandoci sul codice di riferimento nel sito di Font Awesome, analizziamo come è formato il tag <i> di un'icona qualsiasi, in particolare focalizziamoci sulle classi. Come possiamo usare i dati presenti nella nostra struttura dati per creare l'elemento html nel modo corretto e visualizzare l'icona in pagina?
 Inizialmente può essere sufficiente stampare dei semplici div, senza alcuno stile, con all'interno l'icona e uno span con il nome. Solamente quando la parte logica è completa, ci dedichiamo al css.
 */
+
+
+
+
+//selezione del container
+const containerEl = document.querySelector(".container")
+// console.log(containerEl);
+
+
+// Creare tanti div quanti son gli oggetti presenti all'interno dell'array objects
+for (let i = 0; i < objects.length; i++) {
+	// creo i div
+	const div = document.createElement("div")
+	// aggiungo una classe rettangolo ai div
+	div.classList.add('rettangolo')
+	// appendo i div al container
+	containerEl.append(div)
+	console.log(div)
+
+
+
+	// selezionare il nome dell'icona e l'icona stessa
+
+}
+
+
+
+//bisogna prendere l'oggetto e ricostruire l'icona ... family + prefix + name
+
+
+
+object.forEach(element => {
+	
+});
