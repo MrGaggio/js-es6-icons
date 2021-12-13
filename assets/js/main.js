@@ -158,7 +158,9 @@ for (let i = 0; i < objects.length; i++) {
 //bisogna prendere l'oggetto e ricostruire l'icona ... family + prefix + name
 
 
+console.log(objects);
 
-object.forEach(element => {
-	
-});
+
+const catIcon = objects[0].family + objects[0].prefix + objects[0].name
+
+console.log(catIcon);
