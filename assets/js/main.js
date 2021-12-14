@@ -147,8 +147,10 @@ for (let i = 0; i < objects.length; i++) {
 	containerEl.append(div)
 	//creo un template all'interno del quale ricostruisco l'icona
 	const template = `
-	<i class= "${objects[i].family}  ${objects[i].prefix}${objects[i].name}"></i>
+	<i style="color: ${objects[i].color} ;"  class= "${objects[i].family}  ${objects[i].prefix}${objects[i].name} icon"></i>${objects[i].name}
+	
 	`
+	
 	console.log(template);
 	div.innerHTML += template
 
