@@ -1,5 +1,4 @@
-const objects = [
-	{
+const objects = [{
 		name: 'cat',
 		prefix: 'fa-',
 		type: 'animal',
@@ -137,46 +136,69 @@ const containerEl = document.querySelector(".container")
 // selezione del select
 const selezione = document.getElementById("select")
 
-// Creare tanti div quanti son gli oggetti presenti all'interno dell'array objects
-for (let i = 0; i < objects.length; i++) {
-	// creo i div
-	const div = document.createElement("div")
-	// aggiungo una classe rettangolo ai div
-	div.classList.add('rettangolo')
-	// appendo i div al container
-	containerEl.append(div)
-	//creo un template all'interno del quale ricostruisco l'icona
-	const template =
-	 `<i style="color: ${objects[i].color} ;"  class= "${objects[i].family}  ${objects[i].prefix}${objects[i].name} icon"></i>${objects[i].name}`
-	// console.log(template);
-	div.innerHTML += template
+// // Creare tanti div quanti son gli oggetti presenti all'interno dell'array objects
+// for (let i = 0; i < objects.length; i++) {
+// 	// creo i div
+// 	const div = document.createElement("div")
+// 	// aggiungo una classe rettangolo ai div
+// 	div.classList.add('rettangolo')
+// 	// appendo i div al container
+// 	containerEl.append(div)
+// 	//creo un template all'interno del quale ricostruisco l'icona
+// 	let template =
+// 		`<i style="color: ${objects[i].color} ;"  class= "${objects[i].family}  ${objects[i].prefix}${objects[i].name} icon"></i>${objects[i].name}`
+// 	// console.log(template);
+// 	div.innerHTML += template
 
-
-	//Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone (animal, vegetable, user). Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.	
-
-	// estrapolare con filter i vari value
-
-
-	selezione.addEventListener('change',function () {
-		if (selezione.value == animals) {
-			// visualizzare solo le icone con animali
-
-		}else if (selezione.value == vegetables){
-			// visualizzare le icone con vegetali
-		}else if(selezione.value == users) {
-			//visualizzare le icone users
-			
-		}
-	})
-
-
-}   
+// }
 
 
 
+//Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone (animal, vegetable, user). Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
+selezione.addEventListener('change', function () {
+	// svuota il container a ogni selezione
+	containerEl.innerHTML = ""
+	if (selezione.value == "animals") {
+		// filtra le icone all'interno dell'array object andando a prendere il type animal
+		const animals = objects.filter(objects => objects.type == "animal")
+		// console.log(animals);
+		creaDiv(animals)
+
+
+	} else if (selezione.value == "vegetables") {
+		// filtra le icone all'interno dell'array object andando a prendere il type vegetable
+		const vegetables = objects.filter(objects => objects.type == "vegetable")
+		// console.log(vegetables);
+		creaDiv(vegetables)
+	} else if (selezione.value == "users") {
+		// filtra le icone all'interno dell'array object andando a prendere il type user
+		const users = objects.filter(objects => objects.type == "user")
+		// console.log(users);
+		creaDiv(users)
+	} else if(selezione == "All") {
+		
+		creaDiv(objects)
+	}
+
+})
 
 
 
+// creare una funzione per creare tanti div quanti ne servono nella selezione
 
-
-
+function creaDiv(array){
+	for (let i = 0; i < array.length; i++) {
+		// creo i div
+		const div = document.createElement("div")
+		// aggiungo una classe rettangolo ai div
+		div.classList.add('rettangolo')
+		// appendo i div al container
+		containerEl.append(div)
+		//creo un template all'interno del quale ricostruisco l'icona
+		let template =
+			`<i style="color: ${array[i].color} ;"  class= "${array[i].family}  ${array[i].prefix}${array[i].name} icon"></i>${objects[i].name}`
+		// console.log(template);
+		div.innerHTML += template
+	
+	}
+}
