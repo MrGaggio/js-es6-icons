@@ -136,21 +136,22 @@ const containerEl = document.querySelector(".container")
 // selezione del select
 const selezione = document.getElementById("select")
 
-// // Creare tanti div quanti son gli oggetti presenti all'interno dell'array objects
-// for (let i = 0; i < objects.length; i++) {
-// 	// creo i div
-// 	const div = document.createElement("div")
-// 	// aggiungo una classe rettangolo ai div
-// 	div.classList.add('rettangolo')
-// 	// appendo i div al container
-// 	containerEl.append(div)
-// 	//creo un template all'interno del quale ricostruisco l'icona
-// 	let template =
-// 		`<i style="color: ${objects[i].color} ;"  class= "${objects[i].family}  ${objects[i].prefix}${objects[i].name} icon"></i>${objects[i].name}`
-// 	// console.log(template);
-// 	div.innerHTML += template
+// Creare tanti div quanti son gli oggetti presenti all'interno dell'array objects
+for (let i = 0; i < objects.length; i++) {
+	// creo i div
+	const div = document.createElement("div")
+	// aggiungo una classe rettangolo ai div
+	div.classList.add('rettangolo')
+	// appendo i div al container
+	containerEl.append(div)
+	//creo un template all'interno del quale ricostruisco l'icona
+	let template =
+		`<i style="color: ${objects[i].color} ;"  class= "${objects[i].family}  ${objects[i].prefix}${objects[i].name} icon">
+		<p>${objects[i].name}</p></i>`
+	// console.log(template);
+	div.innerHTML += template
 
-// }
+}
 
 
 
@@ -168,7 +169,8 @@ selezione.addEventListener('change', function () {
 			containerEl.append(div)
 			//creo un template all'interno del quale ricostruisco l'icona
 			let template =
-				`<i style="color: ${objects[i].color} ;"  class= "${objects[i].family}  ${objects[i].prefix}${objects[i].name} icon"></i>${objects[i].name}`
+				`<i style="color: ${objects[i].color} ;"  class= "${objects[i].family}  ${objects[i].prefix}${objects[i].name} icon"></i>
+				<p>${objects[i].name}</p>`
 			// console.log(template);
 			div.innerHTML += template
 		
@@ -208,7 +210,8 @@ function creaDiv(array){
 		containerEl.append(div)
 		//creo un template all'interno del quale ricostruisco l'icona
 		let template =
-			`<i style="color: ${array[i].color} ;"  class= "${array[i].family}  ${array[i].prefix}${array[i].name} icon"></i>${objects[i].name}`
+			`<i style="color: ${array[i].color} ;"  class= "${array[i].family}  ${array[i].prefix}${array[i].name} icon"></i>
+			<p>${array[i].name}</p>`
 		// console.log(template);
 		div.innerHTML += template
 	

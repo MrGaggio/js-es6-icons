@@ -8,6 +8,9 @@ h1{
     font-size: 50px;
 }
 
+p{
+    font-size: 18px;
+}
 .up{
     height: 80px;
     line-height: 80px;
@@ -21,15 +24,26 @@ h1{
 }
 
 .container{
-
+    width: 100%;
+    height: 100vh;
+    background-color: #DDDDDD;
     display: flex;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    align-content: flex-start;
 }
 
 .rettangolo{
-    height: 200px;
+    background-color: #F5F5F5;
+    height: 100px;
     width: 200px;
-    background-color: aquamarine;
-    margin: 5px;
+    margin: 30px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 40px;
+    padding-top: 12px;
+    
 }
+
+
 
