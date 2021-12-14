@@ -4,15 +4,20 @@
     box-sizing: border-box;
 }
 
+h1{
+    font-size: 50px;
+}
+
 .up{
     height: 80px;
+    line-height: 80px;
 }
 
 .down_selector{
     height: 80px;
     background-color: #29B1DD;
     text-align: center;
-    line-height: 50px;
+    line-height: 80px;
 }
 
 .container{

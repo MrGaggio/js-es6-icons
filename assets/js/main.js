@@ -158,7 +158,22 @@ const selezione = document.getElementById("select")
 selezione.addEventListener('change', function () {
 	// svuota il container a ogni selezione
 	containerEl.innerHTML = ""
-	if (selezione.value == "animals") {
+	if (selezione.value == "all") {
+		for (let i = 0; i < objects.length; i++) {
+			// creo i div
+			const div = document.createElement("div")
+			// aggiungo una classe rettangolo ai div
+			div.classList.add('rettangolo')
+			// appendo i div al container
+			containerEl.append(div)
+			//creo un template all'interno del quale ricostruisco l'icona
+			let template =
+				`<i style="color: ${objects[i].color} ;"  class= "${objects[i].family}  ${objects[i].prefix}${objects[i].name} icon"></i>${objects[i].name}`
+			// console.log(template);
+			div.innerHTML += template
+		
+		}
+	}else if (selezione.value == "animals") {
 		// filtra le icone all'interno dell'array object andando a prendere il type animal
 		const animals = objects.filter(objects => objects.type == "animal")
 		// console.log(animals);
@@ -175,10 +190,7 @@ selezione.addEventListener('change', function () {
 		const users = objects.filter(objects => objects.type == "user")
 		// console.log(users);
 		creaDiv(users)
-	} else if(selezione == "All") {
-		
-		creaDiv(objects)
-	}
+	} 
 
 })
 
