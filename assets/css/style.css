@@ -4,7 +4,19 @@
     box-sizing: border-box;
 }
 
+.up{
+    height: 80px;
+}
+
+.down_selector{
+    height: 80px;
+    background-color: #29B1DD;
+    text-align: center;
+    line-height: 50px;
+}
+
 .container{
+
     display: flex;
     flex-wrap: wrap;
 }

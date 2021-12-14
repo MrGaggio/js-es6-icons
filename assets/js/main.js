@@ -162,11 +162,5 @@ for (let i = 0; i < objects.length; i++) {
 
 
 
-//bisogna prendere l'oggetto e ricostruire l'icona ... family + prefix + name
-
-
-console.log(objects);
-
-
-const catIcon = objects[0].family + objects[0].prefix + objects[0].name
+//Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone (animal, vegetable, user). Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.	
 
