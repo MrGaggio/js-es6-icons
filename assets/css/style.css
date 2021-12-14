@@ -12,6 +12,9 @@ h1{
 
 p{
     font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-top: 5px;
 }
 .up{
     height: 80px;
