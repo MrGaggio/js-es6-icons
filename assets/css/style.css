@@ -6,11 +6,12 @@
 
 .container{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .rettangolo{
-    height: 50px;
-    width: 50px;
+    height: 200px;
+    width: 200px;
     background-color: aquamarine;
     margin: 5px;
 }

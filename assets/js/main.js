@@ -145,7 +145,12 @@ for (let i = 0; i < objects.length; i++) {
 	div.classList.add('rettangolo')
 	// appendo i div al container
 	containerEl.append(div)
-	console.log(div)
+	//creo un template all'interno del quale ricostruisco l'icona
+	const template = `
+	<i class= "${objects[i].family}  ${objects[i].prefix}${objects[i].name}"></i>
+	`
+	console.log(template);
+	div.innerHTML += template
 
 
 
@@ -163,4 +168,3 @@ console.log(objects);
 
 const catIcon = objects[0].family + objects[0].prefix + objects[0].name
 
-console.log(catIcon);
