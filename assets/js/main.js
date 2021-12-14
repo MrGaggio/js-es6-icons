@@ -134,8 +134,8 @@ Inizialmente può essere sufficiente stampare dei semplici div, senza alcuno sti
 
 //selezione del container
 const containerEl = document.querySelector(".container")
-// console.log(containerEl);
-
+// selezione del select
+const selezione = document.getElementById("select")
 
 // Creare tanti div quanti son gli oggetti presenti all'interno dell'array objects
 for (let i = 0; i < objects.length; i++) {
@@ -146,21 +146,37 @@ for (let i = 0; i < objects.length; i++) {
 	// appendo i div al container
 	containerEl.append(div)
 	//creo un template all'interno del quale ricostruisco l'icona
-	const template = `
-	<i style="color: ${objects[i].color} ;"  class= "${objects[i].family}  ${objects[i].prefix}${objects[i].name} icon"></i>${objects[i].name}
-	
-	`
-	
-	console.log(template);
+	const template =
+	 `<i style="color: ${objects[i].color} ;"  class= "${objects[i].family}  ${objects[i].prefix}${objects[i].name} icon"></i>${objects[i].name}`
+	// console.log(template);
 	div.innerHTML += template
 
 
+	//Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone (animal, vegetable, user). Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.	
 
-	// selezionare il nome dell'icona e l'icona stessa
-
-}
-
+	// estrapolare con filter i vari value
 
 
-//Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone (animal, vegetable, user). Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.	
+	selezione.addEventListener('change',function () {
+		if (selezione.value == animals) {
+			// visualizzare solo le icone con animali
+
+		}else if (selezione.value == vegetables){
+			// visualizzare le icone con vegetali
+		}else if(selezione.value == users) {
+			//visualizzare le icone users
+			
+		}
+	})
+
+
+}   
+
+
+
+
+
+
+
+
 
